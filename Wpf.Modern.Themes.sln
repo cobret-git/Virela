@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36202.13 d17.14
+VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Themes", "Themes\Themes.csproj", "{33E8F3F9-74BE-444F-B893-84F78D441068}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{CC6B2781-7CA9-400E-A7BA-D487C44B7DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.Modern.Themes", "Wpf.Modern.Themes\Wpf.Modern.Themes.csproj", "{6B4A63FB-FBBB-1D3C-8702-FD3C547DC355}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33E8F3F9-74BE-444F-B893-84F78D441068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33E8F3F9-74BE-444F-B893-84F78D441068}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33E8F3F9-74BE-444F-B893-84F78D441068}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33E8F3F9-74BE-444F-B893-84F78D441068}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC6B2781-7CA9-400E-A7BA-D487C44B7DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC6B2781-7CA9-400E-A7BA-D487C44B7DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC6B2781-7CA9-400E-A7BA-D487C44B7DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC6B2781-7CA9-400E-A7BA-D487C44B7DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4A63FB-FBBB-1D3C-8702-FD3C547DC355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4A63FB-FBBB-1D3C-8702-FD3C547DC355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4A63FB-FBBB-1D3C-8702-FD3C547DC355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4A63FB-FBBB-1D3C-8702-FD3C547DC355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

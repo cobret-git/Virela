@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Themes\Themes.csproj" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Wpf.Modern.Themes\Wpf.Modern.Themes.csproj" />
   </ItemGroup>
 
 </Project>

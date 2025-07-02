@@ -1,0 +1,36 @@
+﻿<Page x:Class="Test.Views.Pages.ButtonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Test.Views.Pages"
+      xmlns:controls="clr-namespace:Test.Views.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ButtonPage">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
+        <StackPanel>
+            <!-- Page Header -->
+            <controls:PageHeader Title="Buttons &amp; Toggles" 
+                                 Description="Interactive controls for user actions and state management"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Primary Button"/>
+                <Button Content="Secondary Button"/>
+                <Button Content="Disabled Button"  IsEnabled="False" Padding="16,8"/>
+            </StackPanel>
+            <!-- Standard Buttons -->
+            <!--<controls:SampleCard Title="Standard Buttons" 
+                               Description="Basic button controls with different states">
+                <controls:SampleCard.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Primary Button" Padding="16,8"/>
+
+                        <Button Content="Secondary Button" Padding="16,8"/>
+
+                        <Button Content="Disabled Button"  IsEnabled="False" Padding="16,8"/>
+                    </StackPanel>
+                </controls:SampleCard.Content>
+            </controls:SampleCard>-->
+        </StackPanel>
+    </ScrollViewer>
+</Page>
