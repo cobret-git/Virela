@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <SolidColorBrush x:Key="BgColorInsetBrush" Color="{DynamicResource BgColorInset}"/>
+    <SolidColorBrush x:Key="BgColorDefaultBrush" Color="{DynamicResource BgColorDefault}"/>
+    <SolidColorBrush x:Key="BgColorMutedBrush" Color="{DynamicResource BgColorMuted}"/>
+    <SolidColorBrush x:Key="BorderColorDefaultBrush" Color="{DynamicResource BorderColorDefault}"/>
+    <SolidColorBrush x:Key="FgColorDefaultBrush" Color="{DynamicResource FgColorDefault}"/>
+    <SolidColorBrush x:Key="FgColorDangerBrush" Color="{DynamicResource FgColorDanger}"/>
+    <SolidColorBrush x:Key="FgColorMutedBrush" Color="{DynamicResource FgColorMuted}"/>
+    <SolidColorBrush x:Key="FgColorDisabledBrush" Color="{DynamicResource FgColorDisabled}"/>
+    <SolidColorBrush x:Key="ControlTransparentBgColorSelectedBrush" Color="{DynamicResource ControlTransparentBgColorSelected}"/>
+    <SolidColorBrush x:Key="ControlTransparentBgColorHoverBrush" Color="{DynamicResource ControlTransparentBgColorHover}"/>
+    <SolidColorBrush x:Key="ControlTransparentBgColorActiveBrush" Color="{DynamicResource ControlTransparentBgColorActive}"/>
+    <SolidColorBrush x:Key="BorderColorAccentEmphasisBrush" Color="{DynamicResource BorderColorAccentEmphasis}"/>
+
+    <SolidColorBrush x:Key="ButtonDefaultBgColorRestBrush" Color="{DynamicResource ButtonDefaultBgColorRest}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBgColorActiveBrush" Color="{DynamicResource ButtonDefaultBgColorActive}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBgColorHoverBrush" Color="{DynamicResource ButtonDefaultBgColorHover}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBgColorSelectedBrush" Color="{DynamicResource ButtonDefaultBgColorSelected}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBgColorDisabledBrush" Color="{DynamicResource ButtonDefaultBgColorDisabled}"/>
+    <SolidColorBrush x:Key="ButtonDefaultFgColorRestBrush" Color="{DynamicResource ButtonDefaultFgColorRest}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBorderColorRestBrush" Color="{DynamicResource ButtonDefaultBorderColorRest}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBorderColorActiveBrush" Color="{DynamicResource ButtonDefaultBorderColorActive}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBorderColorHoverBrush" Color="{DynamicResource ButtonDefaultBorderColorHover}"/>
+    <SolidColorBrush x:Key="ButtonDefaultBorderColorDisabledBrush" Color="{DynamicResource ButtonDefaultBorderColorDisabled}"/>
+
+    <SolidColorBrush x:Key="ButtonPrimaryBgColorRestBrush" Color="{StaticResource ButtonPrimaryBgColorRest}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBgColorActiveBrush" Color="{StaticResource ButtonPrimaryBgColorActive}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBgColorHoverBrush" Color="{StaticResource ButtonPrimaryBgColorHover}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBgColorSelectedBrush" Color="{StaticResource ButtonPrimaryBgColorSelected}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBgColorDisabledBrush" Color="{StaticResource ButtonPrimaryBgColorDisabled}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryFgColorRestBrush" Color="{StaticResource ButtonPrimaryFgColorRest}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryFgColorDisabledBrush" Color="{StaticResource ButtonPrimaryFgColorDisabled}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBorderColorRestBrush" Color="{StaticResource ButtonPrimaryBorderColorRest}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBorderColorActiveBrush" Color="{StaticResource ButtonPrimaryBorderColorActive}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBorderColorHoverBrush" Color="{StaticResource ButtonPrimaryBorderColorHover}"/>
+    <SolidColorBrush x:Key="ButtonPrimaryBorderColorDisabledBrush" Color="{StaticResource ButtonPrimaryBorderColorDisabled}"/>
+    
+</ResourceDictionary>
