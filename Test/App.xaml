@@ -7,7 +7,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/GithubDark/GithubDarkTheme.xaml"/>
+                <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightTheme.xaml"/>
+                <ResourceDictionary Source="/Views/Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
         </ResourceDictionary>

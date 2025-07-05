@@ -7,28 +7,30 @@
              xmlns:converters="clr-namespace:Test.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <Border BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderColorDefaultBrush}" Padding="24,16">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <!-- Title -->
-        <TextBlock x:Name="TitleTextBlock"
-                   Grid.Row="0"
-                   Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                   FontSize="32"
-                   FontWeight="SemiBold"
-                   Foreground="#333333"
-                   Margin="0,0,0,5"/>
+            <!-- Title -->
+            <TextBlock x:Name="TitleTextBlock"
+               Grid.Row="0"
+               Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"
+               FontSize="32"
+               FontWeight="SemiBold"
+               Foreground="{DynamicResource FgColorDefaultBrush}"
+               Margin="0,0,0,5"/>
 
-        <!-- Description -->
-        <TextBlock x:Name="DescriptionTextBlock"
-                   Grid.Row="1"
-                   Text="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                   FontSize="14"
-                   Foreground="#666666"
-                   TextWrapping="Wrap"
-                   Visibility="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource StringToVisibilityConverter}}"/>
-    </Grid>
+            <!-- Description -->
+            <TextBlock x:Name="DescriptionTextBlock"
+               Grid.Row="1"
+               Text="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}}"
+               FontSize="14"
+               Foreground="{DynamicResource FgColorMutedBrush}"
+               TextWrapping="Wrap"
+               Visibility="{Binding Description, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource StringToVisibilityConverter}}"/>
+        </Grid>
+    </Border>
 </UserControl>

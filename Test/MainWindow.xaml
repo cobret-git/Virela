@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Test"
         xmlns:pages="clr-namespace:Test.Views.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="{DynamicResource BgColorDefaultBrush}">
     <Window.Resources>
         <Style x:Key="NavigationListBoxItemStyle" TargetType="ListBoxItem">
             <Setter Property="Padding" Value="10,8"/>
@@ -53,21 +54,31 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <ComboBox ItemsSource="{Binding Themes, Mode=OneTime}"
-                          SelectedItem="{Binding SelectedTheme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-        </Border>
+        
         
         <!-- Left Navigation Pane -->
-        <Border Grid.Column="0" Grid.Row="1" Background="#F0F0F0" BorderBrush="#CCCCCC" BorderThickness="0,0,1,0">
+        <Border Grid.Column="0" Grid.Row="1" Background="{StaticResource BgColorInsetBrush}" BorderBrush="{StaticResource BorderColorDefaultBrush}" BorderThickness="0,0,1,0">
+
             <StackPanel Margin="10">
+                <Border HorizontalAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Theme" Grid.Column="0"
+                                   FontSize="14"
+                                   Foreground="{StaticResource FgColorDefaultBrush}"/>
+                        <ComboBox ItemsSource="{Binding Themes, Mode=OneTime}" Margin="15,0,0,0" Grid.Column="1" HorizontalAlignment="Stretch"
+                                  SelectedItem="{Binding SelectedTheme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </Border>
+                
                 <TextBlock Text="Navigation"
                            FontSize="20"
                            FontWeight="SemiBold"
                            Margin="0,0,0,15"
-                           Foreground="#333333"/>
+                           Foreground="{StaticResource FgColorMutedBrush}"/>
 
                 <ListBox x:Name="NavigationListBox"
                          SelectionChanged="NavigationListBox_SelectionChanged"

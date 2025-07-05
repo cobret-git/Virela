@@ -5,19 +5,46 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Test.Views.Pages"
       xmlns:controls="clr-namespace:Test.Views.Controls"
+      xmlns:mdr="clr-namespace:Wpf.Modern.Themes.Controls;assembly=Wpf.Modern.Themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ButtonPage">
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
-        <StackPanel>
-            <!-- Page Header -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
             <controls:PageHeader Title="Buttons &amp; Toggles" 
-                                 Description="Interactive controls for user actions and state management"/>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Primary Button"/>
+                 Description="Interactive controls for user actions and state management"/>
+
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Hyperlink Button"/>-->
+                <!--<Button Grid.Row="1" Grid.Column="0" Content="Online documentation"/>-->
+                <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Button"/>
+                <mdr:ModernButton Grid.Row="3" Grid.Column="0" Content="Button"/>
+                <!--<Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelStyle}" Content="Toggle Switch Button"/>
+                <Button Grid.Row="3" Grid.Column="2"/>-->
+            </Grid>
+            
+            <!--<StackPanel Orientation="Horizontal">
+                <Button Content="Primary Button" Style="{StaticResource ButtonDefaultStyle}"/>
                 <Button Content="Secondary Button"/>
                 <Button Content="Disabled Button"  IsEnabled="False" Padding="16,8"/>
-            </StackPanel>
+            </StackPanel>-->
             <!-- Standard Buttons -->
             <!--<controls:SampleCard Title="Standard Buttons" 
                                Description="Basic button controls with different states">
@@ -31,6 +58,6 @@
                     </StackPanel>
                 </controls:SampleCard.Content>
             </controls:SampleCard>-->
-        </StackPanel>
+        </Grid>
     </ScrollViewer>
 </Page>
