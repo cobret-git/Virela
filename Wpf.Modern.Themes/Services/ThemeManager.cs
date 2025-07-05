@@ -7,7 +7,19 @@ namespace Wpf.Modern.Themes.Services
         #region Fields
         private readonly Dictionary<WpfTheme, string> AvailableThemes = new()
         {
-            { WpfTheme.GithubDark, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/GithubDark/GithubDarkTheme.xaml" },
+            { WpfTheme.GithubDark, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkTheme.xaml" },
+            { WpfTheme.GithubDarkHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkHighContrastTheme.xaml" },
+            { WpfTheme.GithubDarkColorblind, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkColorblindTheme.xaml" },
+            { WpfTheme.GithubDarkColorblindHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkColorblindHighContrastTheme.xaml" },
+            { WpfTheme.GithubDarkTritanopia, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkTritanopiaTheme.xaml" },
+            { WpfTheme.GithubDarkTritanopiaHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubDarkTritanopiaHighContrastTheme.xaml" }, 
+
+            { WpfTheme.GithubLight, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightTheme.xaml" },
+            { WpfTheme.GithubLightHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightHighContrastTheme.xaml" },
+            { WpfTheme.GithubLightColorblind, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightColorblindTheme.xaml" },
+            { WpfTheme.GithubLightColorblindHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightColorblindHighContrastTheme.xaml" },
+            { WpfTheme.GithubLightTritanopia, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightTritanopiaTheme.xaml" },
+            { WpfTheme.GithubLightTritanopiaHighContrast, "pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Themes/GithubLightTritanopiaHighContrastTheme.xaml" },
         };
         #endregion
 

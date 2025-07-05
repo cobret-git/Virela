@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mdr="clr-namespace:Wpf.Modern.Themes.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Palettes/LightTritanopiaHighContrastPalette.xaml"/>
+        <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Brushes.xaml"/>
+        <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Fonts.xaml"/>
+        <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Styles/ButtonStyles.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="mdr:ModernButton" BasedOn="{StaticResource GithubDefaultButtonStyle}"/>
+</ResourceDictionary>
