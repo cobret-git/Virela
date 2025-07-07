@@ -57,7 +57,7 @@
         
         
         <!-- Left Navigation Pane -->
-        <Border Grid.Column="0" Grid.Row="1" Background="{StaticResource BgColorInsetBrush}" BorderBrush="{StaticResource BorderColorDefaultBrush}" BorderThickness="0,0,1,0">
+        <Border Grid.Column="0" Grid.Row="1" Background="{DynamicResource BgColorInsetBrush}" BorderBrush="{DynamicResource BorderColorDefaultBrush}" BorderThickness="0,0,1,0">
 
             <StackPanel Margin="10">
                 <Border HorizontalAlignment="Stretch">
@@ -68,7 +68,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Theme" Grid.Column="0"
                                    FontSize="14"
-                                   Foreground="{StaticResource FgColorDefaultBrush}"/>
+                                   Foreground="{DynamicResource FgColorDefaultBrush}"/>
                         <ComboBox ItemsSource="{Binding Themes, Mode=OneTime}" Margin="15,0,0,0" Grid.Column="1" HorizontalAlignment="Stretch"
                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
@@ -78,13 +78,13 @@
                            FontSize="20"
                            FontWeight="SemiBold"
                            Margin="0,0,0,15"
-                           Foreground="{StaticResource FgColorMutedBrush}"/>
+                           Foreground="{DynamicResource FgColorMutedBrush}"/>
 
                 <ListBox x:Name="NavigationListBox"
                          SelectionChanged="NavigationListBox_SelectionChanged"
                          Background="Transparent"
                          BorderThickness="0"
-                         ItemContainerStyle="{StaticResource NavigationListBoxItemStyle}">
+                         ItemContainerStyle="{DynamicResource NavigationListBoxItemStyle}">
                     <ListBoxItem Content="Buttons" Tag="{x:Type pages:ButtonPage}"/>
                 </ListBox>
             </StackPanel>

@@ -17,6 +17,8 @@
             </Grid.RowDefinitions>
             <controls:PageHeader Title="Buttons &amp; Toggles" 
                  Description="Interactive controls for user actions and state management"/>
+            
+            
 
             <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
@@ -35,7 +37,12 @@
                 <!--<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Hyperlink Button"/>-->
                 <!--<Button Grid.Row="1" Grid.Column="0" Content="Online documentation"/>-->
                 <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Button"/>
-                <mdr:ModernButton Grid.Row="3" Grid.Column="0" Content="Button"/>
+                <mdr:ModernButton Grid.Row="3" Grid.Column="0" Content="Default"/>
+                <mdr:ModernButton Grid.Row="3" Grid.Column="2" IsEnabled="False" Content="Default disabled"/>
+                
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource LabelStyle}" Content="Button Primary"/>
+                <mdr:ModernButton Grid.Row="5" Grid.Column="0" Style="{StaticResource GithubPrimaryButtonStyle}" Content="Primary"/>
+                <mdr:ModernButton Grid.Row="5" Grid.Column="2" Style="{StaticResource GithubPrimaryButtonStyle}" IsEnabled="False" Content="Primary disabled"/>
                 <!--<Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelStyle}" Content="Toggle Switch Button"/>
                 <Button Grid.Row="3" Grid.Column="2"/>-->
             </Grid>

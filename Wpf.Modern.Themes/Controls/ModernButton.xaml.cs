@@ -9,7 +9,7 @@ namespace Wpf.Modern.Themes.Controls
     public partial class ModernButton : Button
     {
         #region Constructors
-        public ModernButton()
+        static ModernButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ModernButton), new FrameworkPropertyMetadata(typeof(ModernButton)));
         }

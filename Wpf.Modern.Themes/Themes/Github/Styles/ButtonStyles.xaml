@@ -27,33 +27,95 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBgColorHover}"/>
+                                    To="{StaticResource ButtonDefaultBgColorHover}"/>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBorderColorHover}"/>
+                                    To="{StaticResource ButtonDefaultBorderColorHover}"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBgColorActive}"/>
+                                    To="{StaticResource ButtonDefaultBgColorActive}"/>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBorderColorActive}"/>
+                                    To="{StaticResource ButtonDefaultBorderColorActive}"/>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBgColorDisabled}"/>
+                                    To="{StaticResource ButtonDefaultBgColorDisabled}"/>
                                         <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
                                     Storyboard.TargetName="Border" Duration="0:0:0.04"
-                                    To="{DynamicResource ButtonDefaultBorderColorDisabled}"/>
+                                    To="{StaticResource ButtonDefaultBorderColorDisabled}"/>
                                         <DoubleAnimation Storyboard.TargetProperty="(Panel.Opacity)"
                                     Storyboard.TargetName="ContentPresenter" Duration="0:0:0.04"
                                     To="0.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="GithubPrimaryButtonStyle" TargetType="mdr:ModernButton">
+        <Setter Property="Padding" Value="12,3"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBgColorRestBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonPrimaryBorderColorRestBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryFgColorRestBrush}"/>
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mdr:ModernButton">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" x:Name="Border" 
+                        Padding="{TemplateBinding Padding}" 
+                        CornerRadius="{TemplateBinding CornerRadius}" 
+                        Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter Margin="2" x:Name="ContentPresenter" 
+                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                          RecognizesAccessKey="True" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBgColorHover}"/>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBorderColorHover}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBgColorActive}"/>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBorderColorActive}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBgColorDisabled}"/>
+                                        <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="Border" Duration="0:0:0.04"
+                                To="{StaticResource ButtonPrimaryBorderColorDisabled}"/>
+                                        <DoubleAnimation Storyboard.TargetProperty="(Panel.Opacity)"
+                                Storyboard.TargetName="ContentPresenter" Duration="0:0:0.04"
+                                To="0.3"/>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
