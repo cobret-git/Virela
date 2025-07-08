@@ -20,22 +20,47 @@
             
             
 
-            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="6"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Grid.Column="0" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Default Button"/>
+                        <mdr:ModernButton Content="Default"/>
+                        <mdr:ModernButton IsEnabled="False" Margin="0,5,0,0" Content="Default disabled"/>
+                        <TextBlock Text="GithubDefaultButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="2" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Outline Button"/>
+                        <mdr:ModernButton Content="Outline" Style="{StaticResource GithubOutlineButtonStyle}"/>
+                        <mdr:ModernButton IsEnabled="False" Style="{StaticResource GithubOutlineButtonStyle}" Margin="0,5,0,0" Content="Outline disabled"/>
+                        <TextBlock Text="GithubOutlineButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="4" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Primary Button"/>
+                        <mdr:ModernButton Content="Primary" Style="{StaticResource GithubPrimaryButtonStyle}"/>
+                        <mdr:ModernButton IsEnabled="False" Style="{StaticResource GithubPrimaryButtonStyle}" Margin="0,5,0,0" Content="Primary disabled"/>
+                        <TextBlock Text="GithubPrimaryButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+                
                 <!--<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Hyperlink Button"/>-->
-                <!--<Button Grid.Row="1" Grid.Column="0" Content="Online documentation"/>-->
+                <!--<Button Grid.Row="1" Grid.Column="0" Content="Online documentation"/>--><!--
                 <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Button"/>
                 <mdr:ModernButton Grid.Row="3" Grid.Column="0" Content="Default"/>
                 <mdr:ModernButton Grid.Row="3" Grid.Column="2" IsEnabled="False" Content="Default disabled"/>
@@ -43,7 +68,7 @@
                 <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource LabelStyle}" Content="Button Primary"/>
                 <mdr:ModernButton Grid.Row="5" Grid.Column="0" Style="{StaticResource GithubPrimaryButtonStyle}" Content="Primary"/>
                 <mdr:ModernButton Grid.Row="5" Grid.Column="2" Style="{StaticResource GithubPrimaryButtonStyle}" IsEnabled="False" Content="Primary disabled"/>
-                <!--<Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelStyle}" Content="Toggle Switch Button"/>
+                --><!--<Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelStyle}" Content="Toggle Switch Button"/>
                 <Button Grid.Row="3" Grid.Column="2"/>-->
             </Grid>
             
