@@ -42,7 +42,7 @@
                         <TextBlock Text="GithubDefaultButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
-
+                
                 <Border Grid.Row="0" Grid.Column="2" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
                     <StackPanel Orientation="Vertical">
                         <Label Style="{StaticResource LabelStyle}" Content="Outline Button"/>
@@ -69,6 +69,15 @@
                         <RadioButton Content="Disabled option" IsEnabled="False" IsChecked="True" GroupName="RadioButtonGroup-8BC7F91AA411"/>
                         <RadioButton Content="Disabled option" IsEnabled="False" GroupName="RadioButtonGroup-8BC7F91AA411"/>
                         <TextBlock Text="GithubPrimaryButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="2" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Hyperlink Button"/>
+                        <mdr:ModernHyperlinkButton Content="Go to google" NavigateUri="https://www.google.com"/>
+                        <mdr:ModernHyperlinkButton IsEnabled="False" Margin="0,5,0,0" Content="Hyperlink disabled"/>
+                        <TextBlock Text="GithubHyperlinkButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
                 

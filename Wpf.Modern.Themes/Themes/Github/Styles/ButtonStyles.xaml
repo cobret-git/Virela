@@ -242,6 +242,90 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="GithubHyperlinkButtonStyle" TargetType="mdr:ModernHyperlinkButton">
+        <Setter Property="Padding" Value="12,3"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBorderBrush" Value="{DynamicResource ButtonInvisibleBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBrush" Value="{DynamicResource ButtonInvisibleFgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBorderBrush" Value="{DynamicResource ButtonInvisibleBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBrush" Value="{DynamicResource ButtonInvisibleFgColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonInvisibleBorderColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource FgColorAccentBrush}"/>
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mdr:ModernHyperlinkButton">
+                    <Grid>
+                        <Border x:Name="BorderVisual"  TextBlock.Foreground="{TemplateBinding Foreground}" 
+                CornerRadius="{TemplateBinding CornerRadius}" 
+                Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border x:Name="FocusVisual"
+                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                Visibility="Collapsed"
+                IsHitTestVisible="False"
+                BorderThickness="2"
+                BorderBrush="{TemplateBinding helper:ThemeHelper.FocusBrush}"
+                CornerRadius="{TemplateBinding CornerRadius}"/>
+                        <ContentPresenter x:Name="ContentPresenter" 
+                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                          TextBlock.Foreground="{TemplateBinding Foreground}"
+                          Margin="{TemplateBinding Padding}"
+                          RecognizesAccessKey="True" 
+                          Focusable="False"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <!--General IsKeyboardFocused setters-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="True"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
+                        </MultiTrigger>
+                        <!--disabled and focused-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+                        </MultiTrigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBrush), Mode=OneWay}"/>
+                            <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBrush), Mode=OneWay}"/>
+                            <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                            <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="GithubRadioButtonStyle" TargetType="RadioButton">
         <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorHoverBrush}"/>
