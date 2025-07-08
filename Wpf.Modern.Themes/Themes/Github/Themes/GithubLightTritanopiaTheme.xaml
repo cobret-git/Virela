@@ -9,4 +9,5 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="mdr:ModernButton" BasedOn="{StaticResource GithubDefaultButtonStyle}"/>
+    <Style TargetType="RadioButton" BasedOn="{StaticResource GithubRadioButtonStyle}"/>
 </ResourceDictionary>

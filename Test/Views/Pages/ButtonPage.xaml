@@ -20,7 +20,7 @@
             
             
 
-            <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10">
+            <Grid Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="6"/>
@@ -29,6 +29,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="6"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
@@ -55,6 +57,17 @@
                         <Label Style="{StaticResource LabelStyle}" Content="Primary Button"/>
                         <mdr:ModernButton Content="Primary" Style="{StaticResource GithubPrimaryButtonStyle}"/>
                         <mdr:ModernButton IsEnabled="False" Style="{StaticResource GithubPrimaryButtonStyle}" Margin="0,5,0,0" Content="Primary disabled"/>
+                        <TextBlock Text="GithubPrimaryButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="0" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Radio Button"/>
+                        <RadioButton Content="Option 1" IsChecked="True" GroupName="RadioButtonGroup-8BC7F91AA419"/>
+                        <RadioButton Content="Option 2" GroupName="RadioButtonGroup-8BC7F91AA419"/>
+                        <RadioButton Content="Disabled option" IsEnabled="False" IsChecked="True" GroupName="RadioButtonGroup-8BC7F91AA411"/>
+                        <RadioButton Content="Disabled option" IsEnabled="False" GroupName="RadioButtonGroup-8BC7F91AA411"/>
                         <TextBlock Text="GithubPrimaryButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>

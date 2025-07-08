@@ -11,6 +11,7 @@
         <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource ButtonDefaultBgColorRestBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderColorRestBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultFgColorRestBrush}"/>
@@ -50,9 +51,7 @@
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="True"/>
-                                <Condition Property="IsKeyboardFocused" Value="True"/>
-                                <Condition Property="IsPressed" Value="False"/>
-                                <Condition Property="IsMouseOver" Value="False"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
                         </MultiTrigger>
@@ -92,6 +91,7 @@
         <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonPrimaryBgColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonPrimaryBorderColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBgColorRestBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonPrimaryBorderColorRestBrush}"/>
         <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryFgColorRestBrush}"/>
@@ -131,9 +131,7 @@
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="True"/>
-                                <Condition Property="IsKeyboardFocused" Value="True"/>
-                                <Condition Property="IsPressed" Value="False"/>
-                                <Condition Property="IsMouseOver" Value="False"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
                         </MultiTrigger>
@@ -173,6 +171,7 @@
         <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonInvisibleBorderColorDisabledBrush}"/>
         <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Foreground" Value="{DynamicResource ButtonInvisibleFgColorRestBrush}"/>
@@ -212,9 +211,7 @@
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="True"/>
-                                <Condition Property="IsKeyboardFocused" Value="True"/>
-                                <Condition Property="IsPressed" Value="False"/>
-                                <Condition Property="IsMouseOver" Value="False"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
                         </MultiTrigger>
@@ -241,6 +238,101 @@
                             <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GithubRadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedBackgroundBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
+        <Setter Property="Background" Value="{DynamicResource ButtonDefaultBgColorRestBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorderColorRestBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultFgColorRestBrush}"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Padding" Value="4,0,0,0"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Grid>
+                        <BulletDecorator>
+                            <BulletDecorator.Bullet>
+                                <Grid>
+                                    <Ellipse x:Name="OuterEllipse" UseLayoutRounding="False" 
+                                             Width="16" Height="16"
+                                             Stroke="{TemplateBinding BorderBrush}" 
+                                             Fill="Transparent" StrokeThickness="1" />
+                                    <Ellipse x:Name="CheckOuterEllipse" UseLayoutRounding="False" 
+                                             Width="16" Height="16"
+                                             Stroke="{TemplateBinding helper:ThemeHelper.CheckedBackgroundBrush}" 
+                                             Fill="Transparent" Visibility="Hidden" StrokeThickness="4" />
+                                    <Ellipse x:Name="FocusVisual" Width="16" Height="16" RenderTransformOrigin="0.5,0.5"
+                                             Stroke="{TemplateBinding helper:ThemeHelper.CheckedBackgroundBrush}" 
+                                             Fill="Transparent" Visibility="Collapsed" StrokeThickness="1.3">
+                                        <Ellipse.RenderTransform>
+                                            <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                        </Ellipse.RenderTransform>
+                                    </Ellipse>
+                                </Grid>
+                            </BulletDecorator.Bullet>
+                            <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </BulletDecorator>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--General IsKeyboardFocused setters-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="True"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
+                        </MultiTrigger>
+                        <!--disabled and focused-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+                        </MultiTrigger>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Value="True">
+                            <Setter TargetName="CheckOuterEllipse" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="CheckOuterEllipse" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedBackgroundBrush), Mode=OneWay}"/>
+                        </DataTrigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="OuterEllipse" Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="OuterEllipse" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="OuterEllipse" Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="OuterEllipse" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                            <Setter TargetName="OuterEllipse" Property="Fill" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="OuterEllipse" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckOuterEllipse" Property="Stroke" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>                    
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
