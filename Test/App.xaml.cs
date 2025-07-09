@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Test
 {
@@ -9,6 +10,6 @@ namespace Test
     /// </summary>
     public partial class App : Application
     {
-    }
 
+    }
 }

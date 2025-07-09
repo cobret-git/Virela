@@ -16,6 +16,10 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static readonly DependencyProperty FocusBackgroundBrushProperty = DependencyProperty.RegisterAttached("FocusBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty CheckedBrushProperty = DependencyProperty.RegisterAttached("CheckedBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty CheckedBackgroundBrushProperty = DependencyProperty.RegisterAttached("CheckedBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
+        public static readonly DependencyProperty CheckedMouseOverBackgroundBrushProperty = DependencyProperty.RegisterAttached("CheckedMouseOverBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
+        public static readonly DependencyProperty CheckedPressedBackgroundBrushProperty = DependencyProperty.RegisterAttached("CheckedPressedBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
+        public static readonly DependencyProperty CheckedBorderBrushProperty = DependencyProperty.RegisterAttached("CheckedBorderBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
+        public static readonly DependencyProperty CheckedDisabledBackgroundBrushProperty = DependencyProperty.RegisterAttached("CheckedDisabledBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty ReadOnlyBrushProperty = DependencyProperty.RegisterAttached("ReadOnlyBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty ReadOnlyBackgroundBrushProperty = DependencyProperty.RegisterAttached("ReadOnlyBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty DisabledBrushProperty = DependencyProperty.RegisterAttached("DisabledBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
@@ -41,6 +45,10 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static Brush GetFocusBackgroundBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.FocusBrushProperty);
         public static Brush GetCheckedBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedBrushProperty);
         public static Brush GetCheckedBackgroundBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedBackgroundBrushProperty);
+        public static Brush GetCheckedMouseOverBackgroundBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedMouseOverBackgroundBrushProperty);
+        public static Brush GetCheckedPressedBackgroundBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedPressedBackgroundBrushProperty);
+        public static Brush GetCheckedDisabledBackgroundBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedDisabledBackgroundBrushProperty);
+        public static Brush GetCheckedBorderBrush(DependencyObject element) => (Brush)element.GetValue(ThemeHelper.CheckedBorderBrushProperty);
         public static Brush GetReadOnlyBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.ReadOnlyBrushProperty);
         public static Brush GetReadOnlyBackgroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.ReadOnlyBackgroundBrushProperty);
         public static Brush GetDisabledBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.DisabledBrushProperty);
@@ -60,6 +68,10 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static void SetFocusBackgroundBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.FocusBrushProperty, (object)value);        
         public static void SetCheckedBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedBrushProperty, (object)value);        
         public static void SetCheckedBackgroundBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedBackgroundBrushProperty, (object)value);
+        public static void SetCheckedMouseOverBackgroundBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedMouseOverBackgroundBrushProperty, (object)value);
+        public static void SetCheckedPressedBackgroundBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedPressedBackgroundBrushProperty, (object)value);
+        public static void SetCheckedDisabledBackgroundBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedDisabledBackgroundBrushProperty, (object)value);
+        public static void SetCheckedBorderBrush(DependencyObject element, Brush value) => element.SetValue(ThemeHelper.CheckedBorderBrushProperty, (object)value);
         public static void SetReadOnlyBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.ReadOnlyBrushProperty, (object)value);
         public static void SetReadOnlyBackgroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.ReadOnlyBackgroundBrushProperty, (object)value);
         public static void SetDisabledBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.DisabledBrushProperty, (object)value);

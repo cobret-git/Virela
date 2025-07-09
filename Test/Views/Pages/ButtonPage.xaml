@@ -80,6 +80,19 @@
                         <TextBlock Text="GithubHyperlinkButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
+
+                <Border Grid.Row="2" Grid.Column="4" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="CheckBox"/>
+                        <CheckBox Content="Check me"/>
+                        <CheckBox Content="Three-state" IsThreeState="True"/>
+                        <CheckBox Content="Disabled" IsEnabled="False"/>
+                        <CheckBox Content="Disabled and Checked" IsChecked="True" IsEnabled="False"/>
+                        <TextBlock Text="GithubCheckBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+                
+                
                 
                 <!--<Label Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}" Content="Hyperlink Button"/>-->
                 <!--<Button Grid.Row="1" Grid.Column="0" Content="Online documentation"/>--><!--

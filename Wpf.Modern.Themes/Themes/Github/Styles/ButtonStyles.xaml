@@ -421,4 +421,155 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="GithubCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="helper:ThemeHelper.CheckedBrush" Value="{DynamicResource ControlCheckedFgColorRestBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedBackgroundBrush" Value="{DynamicResource ControlCheckedBgColorRestBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedBorderBrush" Value="{DynamicResource ControlCheckedBorderColorRestBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedMouseOverBackgroundBrush" Value="{DynamicResource ControlCheckedBgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedPressedBackgroundBrush" Value="{DynamicResource ControlCheckedBgColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.CheckedDisabledBackgroundBrush" Value="{DynamicResource ControlCheckedBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ButtonInvisibleBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBorderBrush" Value="{DynamicResource ButtonDefaultBorderColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderColorDefaultBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ButtonDefaultFgColorRestBrush}"/>
+        <Setter Property="Padding" Value="4,0,0,0"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Padding" Value="4,0,0,0"/>
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Grid>
+                                <Border x:Name="CheckBoxBorder" Width="16" Height="16" CornerRadius="2" BorderThickness="1"
+                                        BorderBrush="{TemplateBinding BorderBrush}" Background="Transparent"/>
+                                <Border x:Name="FocusVisual" Margin="-4" CornerRadius="4" BorderThickness="2"
+                                        BorderBrush="{TemplateBinding helper:ThemeHelper.FocusBrush}" Visibility="Collapsed"/>
+                                <Path x:Name="CheckMark" Width="10" Height="10" Visibility="Collapsed"
+                                      SnapsToDevicePixels="False" StrokeThickness="2"
+                                      Stroke="{TemplateBinding helper:ThemeHelper.CheckedBrush}"
+                                      Data="M 1,5 L 4,8 L 9,2"/>
+                                <Rectangle x:Name="InderminateMark" Width="10" Height="2"
+                                           Fill="{TemplateBinding helper:ThemeHelper.CheckedBrush}" 
+                                           Visibility="Collapsed" RadiusX="1" RadiusY="1"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter x:Name="ContentPresenter" Margin="{TemplateBinding Padding}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          RecognizesAccessKey="True" />
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <!--General IsKeyboardFocused setters-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="True"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FocusVisual" Property="Visibility"  Value="Visible"/>
+                        </MultiTrigger>
+                        <!--disabled and focused-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+                        </MultiTrigger>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedBorderBrush), Mode=OneWay}"/>
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Value="{x:Null}">
+                            <Setter TargetName="InderminateMark" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedBorderBrush), Mode=OneWay}"/>
+                        </DataTrigger>
+
+                        <!-- Mouse Over when Unchecked -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.MouseOverBorderBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+
+                        <!-- Mouse Over when Checked -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedMouseOverBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedMouseOverBackgroundBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+
+                        <!-- Mouse Over when Indeterminate -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsChecked" Value="{x:Null}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedMouseOverBackgroundBrush), Mode=OneWay}"/>
+                            <!--<Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedMouseOverBackgroundBrush), Mode=OneWay}"/>-->
+                        </MultiTrigger>
+
+                        <!-- Pressed State -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="CheckBoxBorder" Property="Opacity" Value="0.8"/>
+                        </Trigger>
+
+                        <!-- Disabled State -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsChecked" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedDisabledBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckMark" Property="Opacity" Value="0.4"/>
+                            <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                        </MultiTrigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsChecked" Value="{x:Null}"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.CheckedDisabledBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="InderminateMark" Property="Opacity" Value="0.4"/>
+                            <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsChecked" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.DisabledBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
