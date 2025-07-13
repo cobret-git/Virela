@@ -12,5 +12,7 @@
     <Style TargetType="{x:Type mdr:ModernHyperlinkButton}" BasedOn="{StaticResource GithubHyperlinkButtonStyle}"/>
     <Style TargetType="RadioButton" BasedOn="{StaticResource GithubRadioButtonStyle}"/>
     <Style TargetType="CheckBox" BasedOn="{StaticResource GithubCheckBoxStyle}"/>
+    <Style TargetType="{x:Type mdr:ModernToggleButton}" BasedOn="{StaticResource GithubToggleButtonStyle}"/>
+
 
 </ResourceDictionary>

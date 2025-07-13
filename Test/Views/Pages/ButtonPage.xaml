@@ -7,7 +7,7 @@
       xmlns:controls="clr-namespace:Test.Views.Controls"
       xmlns:mdr="clr-namespace:Wpf.Modern.Themes.Controls;assembly=Wpf.Modern.Themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1250" d:DesignWidth="800"
       Title="ButtonPage">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
@@ -29,6 +29,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="6"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="6"/>
                     <RowDefinition Height="Auto"/>
@@ -89,6 +91,16 @@
                         <CheckBox Content="Disabled" IsEnabled="False"/>
                         <CheckBox Content="Disabled and Checked" IsChecked="True" IsEnabled="False"/>
                         <TextBlock Text="GithubCheckBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="4" Grid.Column="0" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Toggle Button"/>
+                        <mdr:ModernToggleButton Content="Check me"/>
+                        <mdr:ModernToggleButton Content="Disabled" IsEnabled="False"/>
+                        <mdr:ModernToggleButton Content="Disabled and Checked" IsChecked="True" IsEnabled="False"/>
+                        <TextBlock Text="GithubToggleButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
                 
