@@ -103,6 +103,17 @@
                         <TextBlock Text="GithubToggleButtonStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
+
+                <Border Grid.Row="4" Grid.Column="2" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="Toggle Switch"/>
+                        <mdr:ModernToggleSwitch UncheckedContent="Check me" CheckedContent="Uncheck me" ContentPlacement="Right"/>
+                        <mdr:ModernToggleSwitch UncheckedContent="Check me" CheckedContent="Uncheck me" ContentPlacement="Left"/>
+                        <mdr:ModernToggleSwitch UncheckedContent="Disabled" IsEnabled="False"/>
+                        <mdr:ModernToggleSwitch CheckedContent="Disabled and Checked" IsChecked="True" IsEnabled="False"/>
+                        <TextBlock Text="GithubToggleSwitchStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
                 
                 
                 

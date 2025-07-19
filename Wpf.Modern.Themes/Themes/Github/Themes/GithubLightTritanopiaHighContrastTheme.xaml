@@ -13,4 +13,5 @@
     <Style TargetType="RadioButton" BasedOn="{StaticResource GithubRadioButtonStyle}"/>
     <Style TargetType="CheckBox" BasedOn="{StaticResource GithubCheckBoxStyle}"/>
     <Style TargetType="{x:Type mdr:ModernToggleButton}" BasedOn="{StaticResource GithubToggleButtonStyle}"/>
+    <Style TargetType="{x:Type mdr:ModernToggleSwitch}" BasedOn="{StaticResource GithubToggleSwitchStyle}"/>
 </ResourceDictionary>
