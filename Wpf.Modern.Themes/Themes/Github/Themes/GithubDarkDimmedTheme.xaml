@@ -6,6 +6,7 @@
         <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Brushes.xaml"/>
         <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Fonts.xaml"/>
         <ResourceDictionary Source="/Wpf.Modern.Themes;component/Themes/Github/Styles/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Styles/TextBoxStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="mdr:ModernButton" BasedOn="{StaticResource GithubDefaultButtonStyle}"/>
@@ -14,4 +15,5 @@
     <Style TargetType="CheckBox" BasedOn="{StaticResource GithubCheckBoxStyle}"/>
     <Style TargetType="{x:Type mdr:ModernToggleButton}" BasedOn="{StaticResource GithubToggleButtonStyle}"/>
     <Style TargetType="{x:Type mdr:ModernToggleSwitch}" BasedOn="{StaticResource GithubToggleSwitchStyle}"/>
+    <Style TargetType="{x:Type mdr:ModernTextBox}" BasedOn="{StaticResource GithubDefaultTextBoxStyle}"/>
 </ResourceDictionary>

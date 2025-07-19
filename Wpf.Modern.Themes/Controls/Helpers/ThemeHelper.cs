@@ -26,6 +26,16 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static readonly DependencyProperty DisabledBackgroundBrushProperty = DependencyProperty.RegisterAttached("DisabledBackgroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty DisabledBorderBrushProperty = DependencyProperty.RegisterAttached("DisabledBorderBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
         public static readonly DependencyProperty DisabledForegroundBrushProperty = DependencyProperty.RegisterAttached("DisabledForegroundBrush", typeof(Brush), typeof(ThemeHelper), (PropertyMetadata)new FrameworkPropertyMetadata((object)null));
+        
+        public static readonly DependencyProperty InvalidBrushProperty = DependencyProperty.RegisterAttached("InvalidBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidMouseOverBrushProperty = DependencyProperty.RegisterAttached("InvalidMouseOverBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidDisabledBrushProperty = DependencyProperty.RegisterAttached("InvalidDisabledBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidBackgroundBrushProperty = DependencyProperty.RegisterAttached("InvalidBackgroundBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidMouseOverBackgroundBrushProperty = DependencyProperty.RegisterAttached("InvalidMouseOverBackgroundBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidDisabledBackgroundBrushProperty = DependencyProperty.RegisterAttached("InvalidDisabledBackgroundBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidBorderBrushProperty = DependencyProperty.RegisterAttached("InvalidBorderBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidMouseOverBorderBrushProperty = DependencyProperty.RegisterAttached("InvalidMouseOverBorderBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty InvalidDisabledBorderBrushProperty = DependencyProperty.RegisterAttached("InvalidDisabledBorderBrush", typeof(Brush), typeof(ThemeHelper), new FrameworkPropertyMetadata(null));
         #endregion
 
         #region Constructors
@@ -55,6 +65,16 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static Brush GetDisabledBackgroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.DisabledBackgroundBrushProperty);
         public static Brush GetDisabledForegroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.DisabledForegroundBrushProperty);
         public static Brush GetDisabledBorderBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.DisabledBorderBrushProperty);
+        
+        public static Brush GetInvalidBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidBrushProperty);
+        public static Brush GetInvalidMouseOverBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidMouseOverBrushProperty);
+        public static Brush GetInvalidDisabledBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidDisabledBrushProperty);
+        public static Brush GetInvalidBackgroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidBackgroundBrushProperty);
+        public static Brush GetInvalidMouseOverBackgroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidMouseOverBackgroundBrushProperty);
+        public static Brush GetInvalidDisabledBackgroundBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidDisabledBackgroundBrushProperty);
+        public static Brush GetInvalidBorderBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidBorderBrushProperty);
+        public static Brush GetInvalidMouseOverBorderBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidMouseOverBorderBrushProperty);
+        public static Brush GetInvalidDisabledBorderBrush(DependencyObject obj) => (Brush)obj.GetValue(ThemeHelper.InvalidDisabledBorderBrushProperty);
         #endregion
 
         #region Setters
@@ -77,6 +97,16 @@ namespace Wpf.Modern.Themes.Controls.Helpers
         public static void SetDisabledBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.DisabledBrushProperty, (object)value);
         public static void SetDisabledBackgroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.DisabledBackgroundBrushProperty, (object)value);
         public static void SetDisabledForegroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.DisabledForegroundBrushProperty, (object)value);
+        
+        public static void SetInvalidBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidBrushProperty, (object)value);
+        public static void SetInvalidMouseOverBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidMouseOverBrushProperty, (object)value);
+        public static void SetInvalidDisabledBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidDisabledBrushProperty, (object)value);
+        public static void SetInvalidBackgroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidBackgroundBrushProperty, (object)value);
+        public static void SetInvalidMouseOverBackgroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidMouseOverBackgroundBrushProperty, (object)value);
+        public static void SetInvalidDisabledBackgroundBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidDisabledBackgroundBrushProperty, (object)value);
+        public static void SetInvalidBorderBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidBorderBrushProperty, (object)value);
+        public static void SetInvalidMouseOverBorderBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidMouseOverBorderBrushProperty, (object)value);
+        public static void SetInvalidDisabledBorderBrush(DependencyObject obj, Brush value) => obj.SetValue(ThemeHelper.InvalidDisabledBorderBrushProperty, (object)value);
         #endregion
     }
 }

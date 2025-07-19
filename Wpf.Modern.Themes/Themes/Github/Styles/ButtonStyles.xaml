@@ -1,11 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mdr="clr-namespace:Wpf.Modern.Themes.Controls"
-                    xmlns:cv="clr-namespace:Wpf.Modern.Themes.Converters"
                     xmlns:helper="clr-namespace:Wpf.Modern.Themes.Controls.Helpers">
-    <cv:ToggleSwitchOffsetConverter x:Key="PC"/>
-    <cv:ToggleSwitchOffsetConverter x:Key="NC" IsReversed="True"/>
-    
     <Style x:Key="GithubDefaultButtonStyle" TargetType="mdr:ModernButton">
         <Setter Property="Padding" Value="12,3"/>
         <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="{DynamicResource ButtonDefaultBgColorHoverBrush}"/>

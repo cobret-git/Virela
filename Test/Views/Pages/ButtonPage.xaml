@@ -114,6 +114,16 @@
                         <TextBlock Text="GithubToggleSwitchStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
+
+                <Border Grid.Row="4" Grid.Column="4" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="TextBox"/>
+                        <mdr:ModernTextBox Placeholder="PlaceholderText" AcceptsReturn="True" TextWrapping="Wrap"/>
+                        <mdr:ModernTextBox Text="ReadOnlyText" IsReadOnly="True"/>
+                        <mdr:ModernTextBox Placeholder="PlaceholderText" IsEnabled="False"/>
+                        <TextBlock Text="GithubDefaultTextBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
                 
                 
                 
