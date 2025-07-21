@@ -34,6 +34,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="6"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0" Grid.Column="0" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
@@ -122,6 +124,16 @@
                         <mdr:ModernTextBox Text="ReadOnlyText" IsReadOnly="True"/>
                         <mdr:ModernTextBox Placeholder="PlaceholderText" IsEnabled="False"/>
                         <TextBlock Text="GithubDefaultTextBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="6" Grid.Column="0" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="NumericBox"/>
+                        <mdr:ModernNumericBox Placeholder="PlaceholderText" IsInteger="True"/>
+                        <mdr:ModernNumericBox Value="10" IsReadOnly="True"/>
+                        <mdr:ModernNumericBox Placeholder="PlaceholderText" IsEnabled="False"/>
+                        <TextBlock Text="GithubDefaultNumericBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
                 

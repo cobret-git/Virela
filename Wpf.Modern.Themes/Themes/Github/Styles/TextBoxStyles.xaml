@@ -184,4 +184,181 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="GithubDefaultNumericBoxStyle" TargetType="{x:Type mdr:ModernNumericBox}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderColorRestBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource FgColorDefaultBrush}"/>
+        <Setter Property="CaretBrush" Value="{DynamicResource FgColorDefaultBrush}"/>
+        <Setter Property="PlaceholderForeground" Value="{DynamicResource ControlFgColorPlaceholderBrush}"/>
+        <Setter Property="helper:ThemeHelper.FocusBrush" Value="{DynamicResource BorderColorAccentEmphasisBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidBrush" Value="{DynamicResource FgColorDangerBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidBorderBrush" Value="{DynamicResource ControlBorderColorDangerBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidBackgroundBrush" Value="Transparent"/>
+        <Setter Property="helper:ThemeHelper.InvalidMouseOverBrush" Value="{DynamicResource ControlDangerFgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidMouseOverBackgroundBrush" Value="Transparent"/>
+        <Setter Property="helper:ThemeHelper.InvalidMouseOverBorderBrush" Value="{DynamicResource ControlBorderColorDangerBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidDisabledBrush" Value="{DynamicResource ButtonDangerFgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidDisabledBackgroundBrush" Value="{DynamicResource ButtonDangerBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.InvalidDisabledBorderBrush" Value="{DynamicResource ControlBorderColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.ReadOnlyBrush" Value="{DynamicResource FgColorMutedBrush}"/>
+        <Setter Property="helper:ThemeHelper.ReadOnlyBackgroundBrush" Value="{DynamicResource BgColorMutedBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBrush" Value="{DynamicResource FgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledForegroundBrush" Value="{DynamicResource FgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.DisabledBackgroundBrush" Value="{DynamicResource ControlBgColorDisabledBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBrush" Value="{DynamicResource ButtonOutlineFgColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBackgroundBrush" Value="Transparent"/>
+        <Setter Property="helper:ThemeHelper.MouseOverBorderBrush" Value="{DynamicResource ControlTransparentBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBrush" Value="{DynamicResource ControlTransparentBorderColorHoverBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBackgroundBrush" Value="{DynamicResource ControlTransparentBgColorActiveBrush}"/>
+        <Setter Property="helper:ThemeHelper.PressedBorderBrush" Value="{DynamicResource ControlTransparentBorderColorActiveBrush}"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AllowDrop" Value="true" />
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst" />
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Margin" Value="0,0,0,5"/>
+        <Setter Property="helper:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type mdr:ModernNumericBox}">
+                    <Grid>
+                        <Border x:Name="border" Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="{TemplateBinding CornerRadius}" 
+                                Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                            <Grid>
+                                <!-- Main TextBox content -->
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
+                                              HorizontalScrollBarVisibility="Hidden" 
+                                              VerticalScrollBarVisibility="Hidden" />
+
+                                <!-- Placeholder text -->
+                                <TextBlock x:Name="PlaceholderText" Text="{TemplateBinding Placeholder}" 
+                                           Foreground="{TemplateBinding PlaceholderForeground}" 
+                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                           IsHitTestVisible="False" Opacity="0.7" RenderTransformOrigin="0.5 0.5">
+                                    <TextBlock.Visibility>
+                                        <MultiBinding Converter="{x:Static cv:PlaceholderVisibilityConverter.Instance}">
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text" />
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="IsFocused" />
+                                            <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                     Path="Placeholder" />
+                                        </MultiBinding>
+                                    </TextBlock.Visibility>
+                                    <TextBlock.RenderTransform>
+                                        <TranslateTransform X="5" Y="3"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="FocusVisual" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                Visibility="Collapsed" IsHitTestVisible="False" BorderThickness="2" Margin="-2" 
+                                BorderBrush="{TemplateBinding helper:ThemeHelper.FocusBrush}" 
+                                CornerRadius="{TemplateBinding CornerRadius}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!--General IsKeyboardFocused setters-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="True"/>
+                                <Condition Property="helper:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
+                        </MultiTrigger>
+                        <!--disabled and focused-->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="IsKeyboardFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="FocusVisual" Value="Collapsed"/>
+                        </MultiTrigger>
+                        <!-- mouse over & invalid -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="Validation.HasError" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBackgroundBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+                        <!-- pressed & valid -->
+                        <!--
+        <MultiTrigger>
+            <MultiTrigger.Conditions>
+                <Condition Property="IsPressed" Value="True"/>
+                <Condition Property="Validation.HasError" Value="False"/>
+            </MultiTrigger.Conditions>
+            <Setter Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBrush), Mode=OneWay}"/>
+            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBorderBrush), Mode=OneWay}"/>
+            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.PressedBackgroundBrush), Mode=OneWay}"/>
+        </MultiTrigger>
+        -->
+                        <!-- pressed & invalid -->
+                        <!--
+        <MultiTrigger>
+            <MultiTrigger.Conditions>
+                <Condition Property="IsPressed" Value="True"/>
+                <Condition Property="Validation.HasError" Value="True"/>
+            </MultiTrigger.Conditions>
+            <Setter Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBrush), Mode=OneWay}"/>
+            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBorderBrush), Mode=OneWay}"/>
+            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidMouseOverBackgroundBrush), Mode=OneWay}"/>
+        </MultiTrigger>-->
+                        <!-- disabled & valid -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="Validation.HasError" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBackgroundBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+                        <!-- disabled & invalid -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="False"/>
+                                <Condition Property="Validation.HasError" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidDisabledBackgroundBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+                        <!-- focused & valid -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsFocused" Value="True"/>
+                                <Condition Property="Validation.HasError" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.FocusBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+                        <!-- focused & invalid -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsFocused" Value="True"/>
+                                <Condition Property="Validation.HasError" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidBorderBrush), Mode=OneWay}"/>
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.InvalidBackgroundBrush), Mode=OneWay}"/>
+                        </MultiTrigger>
+                        <!-- read only -->
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.ReadOnlyBackgroundBrush), Mode=OneWay}"/>
+                            <Setter TargetName="PART_ContentHost" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ThemeHelper.ReadOnlyBrush), Mode=OneWay}"/>
+                            <Setter Property="CaretBrush" Value="Transparent"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
