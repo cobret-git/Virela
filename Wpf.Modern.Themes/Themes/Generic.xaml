@@ -7,6 +7,7 @@
         <ResourceDictionary Source="pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Fonts.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Styles/ButtonStyles.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Styles/TextBoxStyles.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Wpf.Modern.Themes;component/Themes/Github/Styles/ProgressBarStyles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type mdr:ModernButton}" BasedOn="{StaticResource GithubDefaultButtonStyle}"/>
@@ -17,4 +18,5 @@
     <Style TargetType="{x:Type mdr:ModernToggleSwitch}" BasedOn="{StaticResource GithubToggleSwitchStyle}"/>
     <Style TargetType="{x:Type mdr:ModernTextBox}" BasedOn="{StaticResource GithubDefaultTextBoxStyle}"/>
     <Style TargetType="{x:Type mdr:ModernNumericBox}" BasedOn="{StaticResource GithubDefaultNumericBoxStyle}"/>
+    <Style TargetType="{x:Type mdr:ModernProgressBar}" BasedOn="{StaticResource GithubDefaultProgressBarStyle}"/>
 </ResourceDictionary>

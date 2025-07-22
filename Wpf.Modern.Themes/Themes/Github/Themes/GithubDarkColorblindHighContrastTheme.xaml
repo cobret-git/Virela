@@ -17,4 +17,5 @@
     <Style TargetType="{x:Type mdr:ModernToggleSwitch}" BasedOn="{StaticResource GithubToggleSwitchStyle}"/>
     <Style TargetType="{x:Type mdr:ModernTextBox}" BasedOn="{StaticResource GithubDefaultTextBoxStyle}"/>
     <Style TargetType="{x:Type mdr:ModernNumericBox}" BasedOn="{StaticResource GithubDefaultNumericBoxStyle}"/>
+    <Style TargetType="{x:Type mdr:ModernProgressBar}" BasedOn="{StaticResource GithubDefaultProgressBarStyle}"/>
 </ResourceDictionary>

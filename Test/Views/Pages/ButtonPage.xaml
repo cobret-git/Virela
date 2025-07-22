@@ -136,6 +136,14 @@
                         <TextBlock Text="GithubDefaultNumericBoxStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
                     </StackPanel>
                 </Border>
+
+                <Border Grid.Row="6" Grid.Column="2" CornerRadius="3" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColorDefaultBrush}">
+                    <StackPanel Orientation="Vertical">
+                        <Label Style="{StaticResource LabelStyle}" Content="PrgressBar"/>
+                        <mdr:ModernProgressBar IsIndeterminate="True" Value="75" CornerRadius="1.3"/>
+                        <TextBlock Text="GithubDefaultProgressBarStyle" Margin="0,16,0,0" FontFamily="Consolas" Foreground="{DynamicResource FgColorMutedBrush}"/>
+                    </StackPanel>
+                </Border>
                 
                 
                 
