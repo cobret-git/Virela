@@ -1,0 +1,15 @@
+﻿<Window x:Class="ControlsShowcase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlsShowcase"
+        xmlns:pages="clr-namespace:ControlsShowcase.Pages"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 10">
+        <TabItem Header="Buttons">
+            <pages:ButtonsPage/>
+        </TabItem>
+    </TabControl>
+</Window>

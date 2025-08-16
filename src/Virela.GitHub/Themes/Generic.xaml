@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:virela="http://schemas.virela.com/winfx/xaml/controls">
+    <Style TargetType="virela:VrlButton">
+        
+    </Style>
+</ResourceDictionary>
