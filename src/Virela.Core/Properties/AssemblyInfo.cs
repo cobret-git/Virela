@@ -18,5 +18,6 @@ using System.Windows.Markup;
 [assembly: Guid("a9a774ff-64d0-4f3d-a160-4151c8ca723e")]
 
 
+[assembly: XmlnsDefinition("http://schemas.virela.com/winfx/xaml/controls", "Virela.Core.Controls.Helpers")]
 [assembly: XmlnsDefinition("http://schemas.virela.com/winfx/xaml/controls", "Virela.Core.Controls")]
 [assembly: XmlnsPrefix("http://schemas.virela.com/winfx/xaml/controls", "virela")]

@@ -5,11 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlsShowcase"
         xmlns:pages="clr-namespace:ControlsShowcase.Pages"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:vc="clr-namespace:Virela.GitHub.Components.Enums;assembly=Virela.GitHub"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <TabControl TabStripPlacement="Left" Margin="0, 0, 0, 10">
-        <TabItem Header="Buttons">
-            <pages:ButtonsPage/>
-        </TabItem>
-    </TabControl>
+    <Window.Resources>
+        <ObjectDataProvider x:Key="GithubPalettes"
+                        MethodName="GetValues"
+                        ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="vc:GitHubPalette"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Label Content="Palette:"/>
+                <ComboBox x:Name="PaletteBox" ItemsSource="{Binding Source={StaticResource GithubPalettes}}"
+                          SelectedItem="{Binding ActivePalette, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Grid>
+
+        <TabControl Grid.Row="1" TabStripPlacement="Left" Margin="0, 0, 0, 10">
+            <TabItem Header="Buttons">
+                <pages:ButtonsPage/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+    
 </Window>
