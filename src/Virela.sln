@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virela.GitHub", "Virela.Git
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsShowcase", "..\samples\ControlsShowcase\ControlsShowcase.csproj", "{A9BA7D65-A41D-4D6D-A3CF-13D15A5DB3A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeGenerator", "ThemeGenerator\ThemeGenerator.csproj", "{C64A12FC-73F7-48CE-80D1-6111F217DD97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A9BA7D65-A41D-4D6D-A3CF-13D15A5DB3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9BA7D65-A41D-4D6D-A3CF-13D15A5DB3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9BA7D65-A41D-4D6D-A3CF-13D15A5DB3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64A12FC-73F7-48CE-80D1-6111F217DD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64A12FC-73F7-48CE-80D1-6111F217DD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64A12FC-73F7-48CE-80D1-6111F217DD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64A12FC-73F7-48CE-80D1-6111F217DD97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

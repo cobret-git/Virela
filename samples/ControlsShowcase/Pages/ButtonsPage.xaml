@@ -5,9 +5,95 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ControlsShowcase.Pages"
              xmlns:virela="http://schemas.virela.com/winfx/xaml/controls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
-        <virela:VrlButton Content="Button"/>
-    </StackPanel>
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800"
+             Background="{DynamicResource BgColorDefaultBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="24">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <!-- Header -->
+            <TextBlock Text="Buttons" 
+                       FontSize="32" 
+                       FontWeight="SemiBold" 
+                       Margin="0,0,0,8"
+                       Foreground="{DynamicResource FgColorDefaultBrush}"/>
+
+            <TextBlock Text="Use buttons to trigger immediate actions. Buttons are one of the most foundational components of an interface." 
+                       FontSize="14" 
+                       Foreground="{DynamicResource FgColorMutedBrush}" 
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,32"/>
+
+            <!-- Default Button Example -->
+            <StackPanel>
+                <TextBlock Text="A standard button with default styling." FontSize="16" FontWeight="Medium" 
+                           Foreground="{DynamicResource FgColorDefaultBrush}" Margin="0,0,0,8"/>
+
+                <Expander x:Name="DefaultButtonExpander" Style="{StaticResource SampleExpanderStyle}" d:IsExpanded="True">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Margin="16,10,0,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Control in Header -->
+                                    <virela:VrlButton x:Name="StandardButton" Grid.Column="0" Content="Standard button" HorizontalAlignment="Left" />
+                                    <CheckBox x:Name="StandardButtonChecbox" Grid.Column="1" VerticalAlignment="Center" Content="Is Enbaled"
+                                              Checked="StandardButtonChecbox_Checked" Unchecked="StandardButtonChecbox_Unchecked"  IsChecked="True"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>                        
+                    </Expander.Header>
+
+                    <!-- Code in Content -->
+                    <TabControl>
+                        <TabItem Header="XAML">
+                            <TextBox x:Name="StandardButtonCode" Style="{StaticResource CodeTextBoxStyle}" MinHeight="80"
+                                     Text="&lt;virela:VrlButton Content=&quot;Standard button&quot; HorizontalAlignment=&quot;Left&quot;/&gt;" />
+                        </TabItem>
+                    </TabControl>
+                </Expander>
+            </StackPanel>
+            
+            <!-- Custom Colors Example -->
+            <StackPanel>
+                <TextBlock Text="Custom button colors" FontSize="16" FontWeight="Medium" Margin="0,0,0,8"
+                           Foreground="{DynamicResource FgColorDefaultBrush}"/>
+                
+                <Expander x:Name="ColoredButtonExpander" Style="{StaticResource SampleExpanderStyle}" d:IsExpanded="True">
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Margin="16,10,0,10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Control in Header -->
+                                    <virela:VrlButton x:Name="ColoredButton" Grid.Column="0" Content="Standard button" HorizontalAlignment="Left" 
+                                                      Background="#6d4aff" Foreground="#fff" BorderThickness="0"                                                      
+                                                      virela:VrlCommonState.MouseOverBackground="#7c5cff" 
+                                                      virela:VrlCommonState.MouseOverForeground="#ffff"                                                      
+                                                      virela:VrlCommonState.PressedBackground="#8a6eff"
+                                                      virela:VrlCommonState.PressedForeground="#fff"                                                      
+                                                      virela:VrlCommonState.DisabledBackground="#8a8797"/>
+                                    <CheckBox x:Name="ColoredButtonChecbox" Grid.Column="1" VerticalAlignment="Center" Content="Is Enbaled"
+                                              IsChecked="True" Checked="ColoredButtonChecbox_Checked" Unchecked="ColoredButtonChecbox_Unchecked"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Expander.Header>
+
+                    <!-- Code in Content -->
+                    <TabControl>
+                        <TabItem Header="XAML">
+                            <TextBox x:Name="ColoredButtonCode" Style="{StaticResource CodeTextBoxStyle}" MinHeight="80"
+                                     Text="&lt;virela:VrlButton Content=&quot;Standard button&quot; HorizontalAlignment=&quot;Left&quot;/&gt;" />
+                        </TabItem>
+                    </TabControl>
+                </Expander>
+
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

@@ -5,8 +5,7 @@
         <ResourceDictionary Source="/Virela.GitHub;component/Palettes/DarkTritanopiaHighContrastPalette.xaml" />
         <ResourceDictionary Source="/Virela.GitHub;component/Styles/Brushes.xaml" />
         <ResourceDictionary Source="/Virela.GitHub;component/Styles/Fonts.xaml" />
-        <ResourceDictionary Source="/Virela.GitHub;component/Styles/ButtonStyles.xaml" />
+        <ResourceDictionary Source="/Virela.GitHub;component/Styles/ButtonTemplates.xaml" />
+        <ResourceDictionary Source="/Virela.GitHub;component/Styles/Styles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
-    <Style TargetType="virela:VrlButton" BasedOn="{StaticResource DefaultButtonStyle}"/>
 </ResourceDictionary>

@@ -1,33 +1,94 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:virela="http://schemas.virela.com/winfx/xaml/controls">
-
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/Virela.GitHub;component/Styles/Fonts.xaml" />
-        <ResourceDictionary Source="/Virela.GitHub;component/Styles/ButtonStyles.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <!--generic default styles with strictly defined brushes-->
-    
-    <Style TargetType="virela:VrlButton">
-        <Setter Property="Padding" Value="12,3" /> 
-        <Setter Property="virela:VrlCommonState.MouseOverBackground" Value="#eff2f5" /> 
-        <Setter Property="virela:VrlCommonState.MouseOverBorderBrush" Value="#d1d9e0" />
-        <Setter Property="virela:VrlCommonState.PressedBackground" Value="#e6eaef" /> 
-        <Setter Property="virela:VrlCommonState.PressedBorderBrush" Value="#d1d9e0" /> 
-        <Setter Property="virela:VrlCommonState.DisabledBackground" Value="#eff2f5" />
-        <Setter Property="virela:VrlCommonState.DisabledBorderBrush" Value="#1a818b98" />
-        <Setter Property="virela:VrlCommonState.DisabledOpacity" Value="0.6" /> 
-        <Setter Property="virela:VrlCommonState.FocusedBorderBrush" Value="#0969da" />
-        <Setter Property="virela:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" /> 
-        <Setter Property="Background" Value="#f6f8fa" />
-        <Setter Property="BorderBrush" Value="#d1d9e0" /> 
-        <Setter Property="Foreground" Value="#25292e" />
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="CornerRadius" Value="4" />
-        <Setter Property="SnapsToDevicePixels" Value="True" /> 
-        <Setter Property="UseLayoutRounding" Value="True" /> 
-        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
-    </Style>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:virela="http://schemas.virela.com/winfx/xaml/controls">
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary Source="/Virela.GitHub;component/Palettes/LightPalette.xaml" />
+    <ResourceDictionary Source="/Virela.GitHub;component/Styles/Brushes.xaml" />
+    <ResourceDictionary Source="/Virela.GitHub;component/Styles/Fonts.xaml" />
+    <ResourceDictionary Source="/Virela.GitHub;component/Styles/ButtonTemplates.xaml" />
+  </ResourceDictionary.MergedDictionaries>
+  <Style x:Key="DefaultButtonStyle" TargetType="virela:VrlButton">
+    <Setter Property="Padding" Value="12,3" />
+    <Setter Property="virela:VrlCommonState.MouseOverBackground" Value="#eff2f5" />
+    <Setter Property="virela:VrlCommonState.MouseOverBorderBrush" Value="#d1d9e0" />
+    <Setter Property="virela:VrlCommonState.PressedBackground" Value="#e6eaef" />
+    <Setter Property="virela:VrlCommonState.PressedBorderBrush" Value="#d1d9e0" />
+    <Setter Property="virela:VrlCommonState.DisabledBackground" Value="#eff2f5" />
+    <Setter Property="virela:VrlCommonState.DisabledBorderBrush" Value="#1a818b98" />
+    <Setter Property="virela:VrlCommonState.DisabledOpacity" Value="0.6" />
+    <Setter Property="virela:VrlCommonState.FocusedBorderBrush" Value="#0969da" />
+    <Setter Property="virela:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" />
+    <Setter Property="Background" Value="#f6f8fa" />
+    <Setter Property="BorderBrush" Value="#d1d9e0" />
+    <Setter Property="Foreground" Value="#25292e" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="UseLayoutRounding" Value="True" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
+  </Style>
+  <Style x:Key="PrimaryButtonStyle" TargetType="virela:VrlButton">
+    <Setter Property="Padding" Value="12,3" />
+    <Setter Property="virela:VrlCommonState.MouseOverBackground" Value="#1c8139" />
+    <Setter Property="virela:VrlCommonState.MouseOverBorderBrush" Value="#261f2328" />
+    <Setter Property="virela:VrlCommonState.PressedBackground" Value="#197935" />
+    <Setter Property="virela:VrlCommonState.PressedBorderBrush" Value="#261f2328" />
+    <Setter Property="virela:VrlCommonState.DisabledBackground" Value="#95d8a6" />
+    <Setter Property="virela:VrlCommonState.DisabledBorderBrush" Value="#95d8a6" />
+    <Setter Property="virela:VrlCommonState.DisabledOpacity" Value="0.6" />
+    <Setter Property="virela:VrlCommonState.FocusedBorderBrush" Value="#0969da" />
+    <Setter Property="virela:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" />
+    <Setter Property="Background" Value="#1f883d" />
+    <Setter Property="BorderBrush" Value="#261f2328" />
+    <Setter Property="Foreground" Value="#ffffff" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="UseLayoutRounding" Value="True" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
+  </Style>
+  <Style x:Key="OutlineButtonStyle" TargetType="virela:VrlButton">
+    <Setter Property="Padding" Value="12,3" />
+    <Setter Property="virela:VrlCommonState.MouseOverBackground" Value="#1a818b98" />
+    <Setter Property="virela:VrlCommonState.MouseOverBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.PressedBackground" Value="#26818b98" />
+    <Setter Property="virela:VrlCommonState.PressedBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.DisabledBackground" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.DisabledBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.DisabledOpacity" Value="0.6" />
+    <Setter Property="virela:VrlCommonState.FocusedBorderBrush" Value="#0969da" />
+    <Setter Property="virela:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="#25292e" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="UseLayoutRounding" Value="True" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{StaticResource ButtonTemplate}" />
+  </Style>
+  <Style TargetType="virela:VrlButton" BasedOn="{StaticResource DefaultButtonStyle}" />
+  <Style x:Key="DefaultHyperlinkStyle" TargetType="virela:VrlHyperlinkButton">
+    <Setter Property="Padding" Value="12,3" />
+    <Setter Property="virela:VrlCommonState.MouseOverBackground" Value="#1a818b98" />
+    <Setter Property="virela:VrlCommonState.MouseOverBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.MouseOverForeground" Value="#25292e" />
+    <Setter Property="virela:VrlCommonState.PressedBackground" Value="#26818b98" />
+    <Setter Property="virela:VrlCommonState.PressedBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.PressedForeground" Value="#25292e" />
+    <Setter Property="virela:VrlCommonState.DisabledBackground" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.DisabledBorderBrush" Value="#00ffffff" />
+    <Setter Property="virela:VrlCommonState.FocusedBorderBrush" Value="#0969da" />
+    <Setter Property="virela:KeyboardNavigationHelper.EnableKeyboardFocusTracking" Value="True" />
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="Foreground" Value="#0969da" />
+    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Setter Property="UseLayoutRounding" Value="True" />
+    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    <Setter Property="Template" Value="{StaticResource HyperlinkTemplate}" />
+  </Style>
+  <Style TargetType="virela:VrlHyperlinkButton" BasedOn="{StaticResource DefaultHyperlinkStyle}" />
 </ResourceDictionary>

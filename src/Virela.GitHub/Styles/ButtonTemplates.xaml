@@ -1,0 +1,251 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:virela="http://schemas.virela.com/winfx/xaml/controls">
+    
+    <ControlTemplate x:Key="ButtonTemplate"
+                     TargetType="virela:VrlButton">
+        <Grid Margin="{TemplateBinding Margin}">
+            <Border x:Name="BorderVisual"
+                    TextBlock.Foreground="{TemplateBinding Foreground}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+            <Border x:Name="FocusVisual"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    Visibility="Collapsed"
+                    IsHitTestVisible="False"
+                    BorderThickness="2"
+                    Margin="-2"
+                    BorderBrush="{TemplateBinding virela:VrlCommonState.FocusedBorderBrush}"
+                    CornerRadius="{TemplateBinding CornerRadius}" />
+            <ContentPresenter x:Name="ContentPresenter"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                              Margin="{TemplateBinding Padding}"
+                              RecognizesAccessKey="True"
+                              Focusable="False" />
+        </Grid>
+
+        <ControlTemplate.Triggers>
+
+            <!--General IsKeyboardFocused setters-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled"
+                               Value="True" />
+                    <Condition Property="IsKeyboardFocused"
+                               Value="True" />
+                    <Condition Property="IsPressed"
+                               Value="False" />
+                    <Condition Property="IsMouseOver"
+                               Value="False" />
+                    <Condition Property="virela:KeyboardNavigationHelper.IsKeyboardFocused"
+                               Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility"
+                        TargetName="FocusVisual"
+                        Value="Visible" />
+            </MultiTrigger>
+            <!--disabled and focused-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled"
+                               Value="False" />
+                    <Condition Property="IsKeyboardFocused"
+                               Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="FocusVisual"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </MultiTrigger>
+
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter TargetName="BorderVisual"
+                        Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBackground), Mode=OneWay}" />
+                <Setter TargetName="BorderVisual"
+                        Property="BorderBrush"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBorderBrush), Mode=OneWay}" />
+            </Trigger>
+            <Trigger Property="IsPressed"
+                     Value="True">
+                <Setter TargetName="BorderVisual"
+                        Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.PressedBackground), Mode=OneWay}" />
+                <Setter TargetName="BorderVisual"
+                        Property="BorderBrush"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.PressedBorderBrush), Mode=OneWay}" />
+            </Trigger>
+            <Trigger Property="IsEnabled"
+                     Value="False">
+                <Setter TargetName="ContentPresenter"
+                        Property="Opacity"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledOpacity), Mode=OneWay}" />
+                <Setter TargetName="BorderVisual"
+                        Property="Background"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBackground), Mode=OneWay}" />
+                <Setter TargetName="BorderVisual"
+                        Property="BorderBrush"
+                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBorderBrush), Mode=OneWay}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="HyperlinkTemplate" TargetType="virela:VrlHyperlinkButton">
+        <Grid>
+            <Border x:Name="BorderVisual"  
+                    TextBlock.Foreground="{TemplateBinding Foreground}" 
+                    CornerRadius="{TemplateBinding CornerRadius}" 
+                    Background="{TemplateBinding Background}" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            <Border x:Name="FocusVisual" 
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                    Visibility="Collapsed" 
+                    IsHitTestVisible="False"
+                    BorderThickness="2" 
+                    BorderBrush="{TemplateBinding virela:VrlCommonState.FocusedBorderBrush}" 
+                    CornerRadius="{TemplateBinding CornerRadius}"/>
+            <ContentPresenter x:Name="ContentPresenter" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                              TextBlock.Foreground="{TemplateBinding Foreground}" 
+                              Margin="{TemplateBinding Padding}" 
+                              RecognizesAccessKey="True" 
+                              Focusable="False"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <!--General IsKeyboardFocused setters-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True"/>
+                    <Condition Property="virela:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
+            </MultiTrigger>
+            <!--disabled and focused-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False"/>
+                    <Condition Property="IsKeyboardFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+            </MultiTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverForeground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBackground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBorderBrush), Mode=OneWay}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.PressedForeground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.PressedBackground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.PressedBorderBrush), Mode=OneWay}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBackground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBorderBrush), Mode=OneWay}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ToggleButtonTempalte" TargetType="virela:VrlToggleButton">
+        <Grid>
+            <Border x:Name="BorderVisual"
+                    CornerRadius="{TemplateBinding CornerRadius}" 
+                    Background="{TemplateBinding Background}" 
+                    BorderBrush="{TemplateBinding BorderBrush}" 
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+            <Border x:Name="FocusVisual"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    Visibility="Collapsed" IsHitTestVisible="False" BorderThickness="2" Margin="-2"
+                    BorderBrush="{TemplateBinding virela:VrlCommonState.FocusedBorderBrush}"
+                    CornerRadius="{TemplateBinding CornerRadius}"/>
+            <ContentPresenter x:Name="ContentPresenter" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                              Margin="{TemplateBinding Padding}"
+                              RecognizesAccessKey="True" 
+                              Focusable="False"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+
+            <!--General IsKeyboardFocused setters-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True"/>
+                    <Condition Property="virela:KeyboardNavigationHelper.IsKeyboardFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility" TargetName="FocusVisual" Value="Visible"/>
+            </MultiTrigger>
+            <!--disabled and focused-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False"/>
+                    <Condition Property="IsKeyboardFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="FocusVisual" Property="Visibility" Value="Collapsed"/>
+            </MultiTrigger>
+
+            <!--checked-->
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                     Value="True">
+                <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCheckedState.Foreground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCheckedState.Background), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCheckedState.BorderBrush), Mode=OneWay}"/>
+            </DataTrigger>
+
+            <!-- Mouse Over when Unchecked -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsChecked" Value="False"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBackground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.MouseOverBorderBrush), Mode=OneWay}"/>
+            </MultiTrigger>
+
+            <!-- Mouse Over when Checked -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsChecked" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCheckedState.MouseOverBackground), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCheckedState.MouseOverBorderBrush), Mode=OneWay}"/>
+            </MultiTrigger>
+
+            <!-- Pressed State -->
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="BorderVisual" Property="Opacity" Value="0.8"/>
+            </Trigger>
+
+            <!-- Disabled State -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False"/>
+                    <Condition Property="IsChecked" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.CheckedDisabledBackgroundBrush), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBorderBrush), Mode=OneWay}"/>
+                <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+            </MultiTrigger>
+
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="False"/>
+                    <Condition Property="IsChecked" Value="False"/>
+                </MultiTrigger.Conditions>
+                <Setter TargetName="BorderVisual" Property="Background" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBackgroundBrush), Mode=OneWay}"/>
+                <Setter TargetName="BorderVisual" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(virela:VrlCommonState.DisabledBorderBrush), Mode=OneWay}"/>
+                <Setter TargetName="ContentPresenter" Property="Opacity" Value="0.3"/>
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+</ResourceDictionary>
